@@ -1,13 +1,25 @@
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 import sys
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(BASE_DIR)
+
 import effcient_Net.tongue_crack.crack_predict as crack
 import effcient_Net.tongue_coated.coated_predict as coated
 import effcient_Net.tongue_color.color_predict as color
 import effcient_Net.tongue_indentation.indent_predict as indent
-import os
+
 from UI.home_page import Ui_HomePageWindow
 from UI.seg_tongue_work import Ui_MainWindow
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)
+
+
 os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 class mainWin(QMainWindow, Ui_HomePageWindow):
     def __init__(self,parent=None):
@@ -164,16 +176,38 @@ class secondmain(QMainWindow, Ui_MainWindow):
 
 
 
+@app.route('/analyze', methods=['GET', 'POST'])
+def analyze():
+    def analyze():
+        """
+        接收图片并返回分析结果
+        """
+        if 'file' not in request.files:
+            return jsonify({"error": "No file provided"}), 400
+
+        file = request.files['file']
+        if file.filename == '':
+            return jsonify({"error": "No file selected"}), 400
+
+        # 保存上传的图片
+        image_path = "./user_upload.jpg"
+        file.save(image_path)
+
+        # 分析舌象
+        # result = TongueDiagnosis.analyze_tongue(image_path)
+        # return jsonify(result)
+        return "Hello World"
 
 
 if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    #初始化窗口
-    main_win = mainWin()
-    second_main = secondmain()
-    #second_main.setFixedSize(1666,920)
-    main_win.setFixedSize(1666,870)
-    #main_win.move((QApplication.desktop().width()-main_win.width())/2,(QApplication.desktop().height()-main_win.height())/13)
-
-    main_win.show()
-    sys.exit(app.exec_())
+    # app = QApplication(sys.argv)
+    # #初始化窗口
+    # main_win = mainWin()
+    # second_main = secondmain()
+    # #second_main.setFixedSize(1666,920)
+    # main_win.setFixedSize(1666,870)
+    # #main_win.move((QApplication.desktop().width()-main_win.width())/2,(QApplication.desktop().height()-main_win.height())/13)
+    #
+    # main_win.show()
+    # sys.exit(app.exec_())
+    app.run(debug=True)
