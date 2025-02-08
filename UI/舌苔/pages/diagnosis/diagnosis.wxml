@@ -1,0 +1,40 @@
+<view class="container">
+  <view class="image-section">
+    <view class="image-box">
+      <image class="tongue-image" src="{{tongueImage}}" mode="aspectFit"></image>
+      <button class="upload-btn" bindtap="uploadImage">上传舌象</button>
+    </view>
+    <view class="image-box">
+      <image class="result-image" src="{{resultImage}}" mode="aspectFit"></image>
+    </view>
+  </view>
+
+  <view class="analysis-section">
+    <view class="analysis-item">
+      <text class="analysis-label">舌色分析</text>
+      <text class="analysis-result">{{tongueColor}}</text>
+    </view>
+    <view class="analysis-item">
+      <text class="analysis-label">苔色分析</text>
+      <text class="analysis-result">{{coatedColor}}</text>
+    </view>
+    <view class="analysis-item">
+      <text class="analysis-label">裂纹舌分析</text>
+      <text class="analysis-result">{{crackResult}}</text>
+    </view>
+    <view class="analysis-item">
+      <text class="analysis-label">齿痕舌分析</text>
+      <text class="analysis-result">{{indentResult}}</text>
+    </view>
+  </view>
+
+  <view class="diagnosis-section">
+    <text class="diagnosis-title">体质鉴定为</text>
+    <text class="diagnosis-result">{{diagnosisResult}}</text>
+  </view>
+
+  <view class="button-section">
+    <button class="start-btn" bindtap="startDiagnosis">开始鉴定</button>
+    <button class="back-btn" bindtap="goBack">返回</button>
+  </view>
+</view> 

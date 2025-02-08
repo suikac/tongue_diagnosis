@@ -1,0 +1,27 @@
+/* 全局样式 */
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.btn {
+  width: 360rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 12rpx;
+  background: linear-gradient(#f6f7fa, #dadbde);
+  color: #333;
+  font-size: 28rpx;
+  font-weight: bold;
+  text-align: center;
+  border: 2rpx solid #8f8f91;
+}
+
+.btn:active {
+  background: linear-gradient(#dadbde, #f6f7fa);
+} 

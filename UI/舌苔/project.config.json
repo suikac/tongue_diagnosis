@@ -1,0 +1,31 @@
+{
+  "description": "舌苔检测系统",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "miniprogramRoot": "",
+  "compileType": "miniprogram",
+  "projectname": "舌苔检测系统",
+  "setting": {
+    "useCompilerPlugins": [
+      "sass",
+      "typescript"
+    ],
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    }
+  },
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {},
+  "srcMiniprogramRoot": "",
+  "appid": "wx1a14dac8cd94334c",
+  "libVersion": "2.33.0",
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  }
+}
