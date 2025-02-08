@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/upload/upload",
     "pages/diagnosis/diagnosis"
   ],
   "window": {

@@ -5,7 +5,7 @@ Page({
   
   enterSystem() {
     wx.navigateTo({
-      url: '../upload/upload'
+      url: '../diagnosis/diagnosis'
     })
   }
 }) 
