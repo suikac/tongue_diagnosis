@@ -2,3 +2,15 @@
   <image class="background-image" src="/images/logo22.jpg"></image>
   <button class="enter-button">进入系统么</button>
 </view>
+
+<view class="container">
+  <button bindtap="chooseImage">选择舌象图片</button>
+  <image src="{{imageUrl}}" mode="aspectFit" wx:if="{{imageUrl}}"></image>
+  <view wx:if="{{result}}">
+    <text>裂纹: {{result.crack}}</text>
+    <text>齿痕: {{result.indent}}</text>
+    <text>舌苔: {{result.coated}}</text>
+    <text>舌色: {{result.color}}</text>
+    <text>建议: {{result.suggestion}}</text>
+  </view>
+</view>
