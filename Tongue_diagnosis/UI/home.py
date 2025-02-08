@@ -178,36 +178,35 @@ class secondmain(QMainWindow, Ui_MainWindow):
 
 @app.route('/analyze', methods=['GET', 'POST'])
 def analyze():
-    def analyze():
-        """
-        接收图片并返回分析结果
-        """
-        if 'file' not in request.files:
-            return jsonify({"error": "No file provided"}), 400
+    """
+    接收图片并返回分析结果
+    """
+    # if 'file' not in request.files:
+    #     return jsonify({"error": "No file provided"}), 400
+    #
+    # file = request.files['file']
+    # if file.filename == '':
+    #     return jsonify({"error": "No file selected"}), 400
+    #
+    # # 保存上传的图片
+    # image_path = "./user_upload.jpg"
+    # file.save(image_path)
 
-        file = request.files['file']
-        if file.filename == '':
-            return jsonify({"error": "No file selected"}), 400
-
-        # 保存上传的图片
-        image_path = "./user_upload.jpg"
-        file.save(image_path)
-
-        # 分析舌象
-        # result = TongueDiagnosis.analyze_tongue(image_path)
-        # return jsonify(result)
-        return "Hello World"
+    # 分析舌象
+    # result = TongueDiagnosis.analyze_tongue(image_path)
+    # return jsonify(result)
+    return {"hello": "world"}
 
 
 if __name__ == '__main__':
-    # app = QApplication(sys.argv)
-    # #初始化窗口
-    # main_win = mainWin()
-    # second_main = secondmain()
-    # #second_main.setFixedSize(1666,920)
-    # main_win.setFixedSize(1666,870)
-    # #main_win.move((QApplication.desktop().width()-main_win.width())/2,(QApplication.desktop().height()-main_win.height())/13)
-    #
-    # main_win.show()
-    # sys.exit(app.exec_())
     app.run(debug=True)
+    app = QApplication(sys.argv)
+    #初始化窗口
+    main_win = mainWin()
+    second_main = secondmain()
+    #second_main.setFixedSize(1666,920)
+    main_win.setFixedSize(1666,870)
+    #main_win.move((QApplication.desktop().width()-main_win.width())/2,(QApplication.desktop().height()-main_win.height())/13)
+
+    main_win.show()
+    sys.exit(app.exec_())

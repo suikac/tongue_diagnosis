@@ -1,6 +1,7 @@
 {
   "projectname": "tongue_diagnosis",
   "setting": {
-    "compileHotReLoad": true
+    "compileHotReLoad": true,
+    "urlCheck": false
   }
 }
