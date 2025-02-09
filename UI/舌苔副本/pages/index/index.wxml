@@ -1,6 +1,0 @@
-<view class="container">
-  <image class="bg-image" src="/images/320.jpg" mode="aspectFill"></image>
-  <view class="content">
-    <button class="enter-btn" bindtap="enterSystem">进入系统</button>
-  </view>
-</view> 
