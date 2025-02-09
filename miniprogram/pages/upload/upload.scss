@@ -1,0 +1,52 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40rpx;
+}
+
+.upload-box {
+  width: 600rpx;
+  height: 600rpx;
+  margin: 60rpx 0;
+  border: 4rpx dashed #999;
+  border-radius: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.preview-image {
+  width: 100%;
+  height: 100%;
+}
+
+.button-group {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 40rpx;
+  margin-top: 40rpx;
+}
+
+.btn {
+  width: 300rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  border-radius: 12rpx;
+  background: linear-gradient(#f6f7fa, #dadbde);
+  color: #333;
+  border: 2rpx solid #8f8f91;
+}
+
+.btn:active {
+  background: linear-gradient(#dadbde, #f6f7fa);
+}
+
+.start-btn[disabled] {
+  background: #ccc;
+  color: #666;
+} 

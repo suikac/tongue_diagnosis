@@ -37,6 +37,7 @@ def main(path):
     # expand batch dimension
     img = torch.unsqueeze(img, dim=0)
     # read class_indict
+    print(os.getcwd())
     json_path = 'effcient_Net/tongue_crack/class_indices.json'
     assert os.path.exists(json_path), "file: '{}' dose not exist.".format(json_path)
 

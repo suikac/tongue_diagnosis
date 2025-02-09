@@ -1,0 +1,12 @@
+<view class="container">
+  <!-- 虚线框图片预览区域 -->
+  <view class="upload-box">
+    <image class="preview-image" src="{{imageUrl || '/images/back2.jpg'}}" mode="aspectFit"></image>
+  </view>
+  
+  <!-- 底部按钮区域 -->
+  <view class="button-group">
+    <button class="btn upload-btn" bindtap="chooseImage">上传照片</button>
+    <button class="btn start-btn" bindtap="startDiagnosis" disabled="{{!imageUrl}}">开始鉴定</button>
+  </view>
+</view> 

@@ -1,0 +1,45 @@
+<view class="container">
+  <!-- 上部图片展示区 -->
+  <view class="image-section">
+    <image 
+      class="result-image" 
+      src="{{imageUrl}}" 
+      mode="aspectFit"
+      bindtap="previewImage">
+    </image>
+  </view>
+
+  <!-- 中部四宫格分析结果 -->
+  <view class="analysis-grid">
+    <view class="grid-item">
+      <view class="grid-content">
+        <text class="grid-label">舌色分析</text>
+        <text class="grid-value">{{tongueColor}}</text>
+      </view>
+    </view>
+    <view class="grid-item">
+      <view class="grid-content">
+        <text class="grid-label">苔色分析</text>
+        <text class="grid-value">{{coatedColor}}</text>
+      </view>
+    </view>
+    <view class="grid-item">
+      <view class="grid-content">
+        <text class="grid-label">裂纹舌分析</text>
+        <text class="grid-value">{{crackResult}}</text>
+      </view>
+    </view>
+    <view class="grid-item">
+      <view class="grid-content">
+        <text class="grid-label">齿痕舌分析</text>
+        <text class="grid-value">{{indentResult}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 下部诊断结果区域 -->
+  <view class="diagnosis-section">
+    <text class="diagnosis-title">体质鉴定为</text>
+    <view class="diagnosis-result">{{diagnosisResult}}</view>
+  </view>
+</view> 
