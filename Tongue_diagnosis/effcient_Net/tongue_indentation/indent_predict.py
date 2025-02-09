@@ -31,14 +31,14 @@ def main(path):
     img_path = path
     assert os.path.exists(img_path), "file: '{}' dose not exist.".format(img_path)
     img = Image.open(img_path)
-    plt.imshow(img)
+    # plt.imshow(img)
     # [N, C, H, W]
     img = data_transform(img)
     # expand batch dimension
     img = torch.unsqueeze(img, dim=0)
 
     # read class_indict
-    json_path = '../effcient_Net/tongue_indentation/class_indices.json'
+    json_path = 'effcient_Net/tongue_indentation/class_indices.json'
     assert os.path.exists(json_path), "file: '{}' dose not exist.".format(json_path)
 
     json_file = open(json_path, "r")
@@ -47,7 +47,7 @@ def main(path):
     # create model
     model = create_model(num_classes=2).to(device)
     # load model weights
-    model_weight_path = "../effcient_Net/tongue_indentation/weights/model-29.pth"
+    model_weight_path = "effcient_Net/tongue_indentation/weights/model-29.pth"
     model.load_state_dict(torch.load(model_weight_path, map_location=device))
     model.eval()
     with torch.no_grad():
